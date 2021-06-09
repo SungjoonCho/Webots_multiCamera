@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- start Webots -->
+  <arg name="no_gui" default="false," doc="Start Webots with minimal GUI"/>
+  <include file="$(find webots_ros_sim)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="$(arg no_gui)"/>
+    <arg name="world" value="$(find webots_ros_sim)/worlds/lab.wbt"/>
+  </include>
+
+  <!-- <arg name="duration" default="20" doc="Duration in seconds"/>
+  <arg name="auto_close" default="false" doc="Startup mode"/> -->
+  <!-- <node name="kinect" pkg="webots_ros_sim" type="kinect" args="$(arg duration)" required="$(arg auto_close)"/> -->
+  <!-- <node name="kinect" pkg="webots_ros_sim" type="kinect"/> -->
+    <arg name="auto_close" default="false" doc="Startup mode"/>
+  <node name="rangefinder" pkg="webots_ros_sim" type="rangefinder" required="$(arg auto_close)"/>
+</launch>
