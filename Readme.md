@@ -111,4 +111,5 @@ webots_ros : /opt/ros/melodic/share/webots_ros
 * https://cyberbotics.com/doc/guide/tutorial-8-using-ros?tab-ros=melodic
 * https://cyberbotics.com/doc/reference/camera?tab-language=ros
 * https://cyberbotics.com/doc/reference/rangefinder?tab-language=ros
+* https://www.youtube.com/c/Softillusion/videos
 </pre>
