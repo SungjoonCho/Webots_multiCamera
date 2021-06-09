@@ -3,6 +3,7 @@
 ## Execute
 
 <pre>
+0. prerequisite - webots 설치 완료
 1. $ mkdir catkin_ws
 2. $ cd catkin_ws
 3. $ mkdir src
@@ -34,7 +35,7 @@
 
 $ rosservice list
 <p align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/80872528/121319649-65a36480-c947-11eb-8233-2fa742c71456.png">
+  <img width="700" src="https://user-images.githubusercontent.com/80872528/121320561-3d683580-c948-11eb-82f9-b5911c2d4ea6.png">
 </p>
 
 $ rostopic list
@@ -67,7 +68,13 @@ $ rosrun rviz rviz
 7-1. controllerArgs는 --name=sensor0으로 설정(본 디렉토리의 rangefinder.cpp에서 여러개의 센서에 service call하게 만들기 위해 name은 모두 sensor + 숫자로 통일)
 7-2. 위와 같이 name을 별도로 설정하지 않을 경우, webots 실행할 때마다 device name이 계속 바뀜(처음에는 rangefinder112233, 그다음에는 rangefinder 120421 이렇게)
 8. range finder도 위와 마찬가지로 진행
+
+* Camera, Range finder shape은 모두 box로 했으며 본 simulation에서는 둘이 같은 frame 촬영을 위해 동일한 translation, rotation으로 align, parameter도 동일하게 함.
+* 두 device의 parameter는 기본적으로 realsense D435의 depth spec에 맞춤
+* Camera Parameter : fov - 1.52, width - 1280, height - 720
+* Range finder Parameter : fov - 1.52, width - 1280, height - 720, minRange - 0.3, maxRange - 3
 </pre>
+
 
 ## Node description - rangefinder.cpp
 
