@@ -255,7 +255,7 @@ target_link_libraries(pioneer3at
 ## Install ##
 #############
 
-install(TARGETS rangefinder
+install(TARGETS multisensor
         RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(TARGETS keyboard_teleop
@@ -296,3 +296,4 @@ install(DIRECTORY plugins
 
 install(DIRECTORY worlds
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
