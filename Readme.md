@@ -29,6 +29,7 @@
 12. terminal 2 - $ source ./devel/setup.bash
 13. terminal 2 - $ rosrun webots_ros multisensor
 
+* robot 복사 추가시 controllerArgs는 sensor + 다음 숫자로 할 것
 </pre>
 
 ## Result
