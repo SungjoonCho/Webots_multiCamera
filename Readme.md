@@ -10,21 +10,47 @@
 5. $ git clone https://github.com/cyberbotics/webots_ros
 6. $ catkin_make
 
-7. 본 디렉토리 Webots_multiCamera 안에 있는 파일 옮기기
+7-1. 본 디렉토리 Webots_multiCamera 안에 있는 파일 옮기기
    * world/lab.wbt를 catkin_ws/src/webots_ros/worlds 안으로 옮기기
    * src/multisensor.cpp를 catkin_ws/src/webots_ros/src 안으로 옮기기
    * catkin_ws/src/webots_ros/CMakeListss.txt 대신 Webots_multicamera/CMakeLists.txt 덮어쓰기
+7-2. $ catkin_make
    
 8. $ cd src/webots_ros/worlds
 9. $ webots lab.wbt
-9. 아래와 같이 안 뜰 경우, File - Reload World
+10. 아래와 같이 안 뜰 경우, File - Reload World
 
 <p align="center">
   <img width="700" src="https://user-images.githubusercontent.com/80872528/121309865-abf3c600-c93d-11eb-89b6-bc9809e820ef.png">
 </p>
 
+11. terminal 2 - $ cd catkin_ws
+12. terminal 2 - $ source ./devel/setup.bash
+13. terminal 2 - $ rosrun webots_ros multisensor
 
 </pre>
+
+## Result
+
+$ rosservice list
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/80872528/121319649-65a36480-c947-11eb-8233-2fa742c71456.png">
+</p>
+
+$ rostopic list
+<pre>
+/sensor0/camera/image
+/sensor0/range_finder/range_image
+/sensor1/camera/image
+/sensor1/range_finder/range_image
+</pre>
+
+$ rosrun rviz rviz
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/80872528/121320172-dfd3e900-c947-11eb-8444-09acd7c4f38d.png">
+</p>
+
 
 ## camera, range finder description
 
@@ -70,10 +96,6 @@ local repository path
 webots : /usr/local/webots
 webots_ros : /opt/ros/melodic/share/webots_ros
 </pre>
-
-## Object 올리기 & world 새로 만들기
-
-https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=c++&tab-os=linux 참조
 
 ### Reference
 <pre>
