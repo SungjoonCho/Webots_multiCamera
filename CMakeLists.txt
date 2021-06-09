@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(webots_ros_sim)
+project(webots_ros)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -170,11 +170,11 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(rangefinder src/rangefinder.cpp)
+add_executable(multisensor src/multisensor.cpp)
 
-add_dependencies(rangefinder webots_ros_generate_messages_cpp)
+add_dependencies(multisensor webots_ros_generate_messages_cpp)
 
-target_link_libraries(rangefinder
+target_link_libraries(multisensor
 	${catkin_LIBRARIES}
 )
 
